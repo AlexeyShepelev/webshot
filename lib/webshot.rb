@@ -38,7 +38,8 @@ module Webshot
         # Raise JavaScript errors to Ruby
         js_errors: false,
         # Additional command line options for PhantomJS
-        phantomjs_options: ['--ignore-ssl-errors=yes', '--ssl-protocol=any']
+        phantomjs_options: ['--ignore-ssl-errors=yes', '--ssl-protocol=any'],
+        phantomjs_logger: Rails.root.join('log', 'phantomjs.log')
       })
     end
     Capybara.current_driver = :poltergeist

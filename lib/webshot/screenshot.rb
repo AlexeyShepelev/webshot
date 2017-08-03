@@ -66,6 +66,9 @@ module Webshot
           screenshot_opts = { full: full }
           screenshot_opts = screenshot_opts.merge({ selector: selector }) if selector
 
+          # Resize browser window
+          page.driver.resize(width, height)
+
           # Save screenshot to file
           page.driver.save_screenshot(tmp.path, screenshot_opts)
 
